@@ -5,5 +5,27 @@
 }
 
 .App {
+}
+
+.wrapper {
+    border: 1px dashed red;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav__link {
+    text-decoration: none;
+    margin: 20px;
+    border: none;
+    font-size: 20px;
+    background: none;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.active__link {
+    color: var(--color-active);
+    cursor: default;
 }
