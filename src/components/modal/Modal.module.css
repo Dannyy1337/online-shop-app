@@ -6,11 +6,12 @@
     left: 0;
     display: none;
     background: rgba(0,0,0,0.4);
+    z-index: 30;
 }
 
 .modalContent {
     padding: 10px;
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 16px;
     min-width: 250px;
     min-height: 0px;

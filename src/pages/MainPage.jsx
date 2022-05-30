@@ -4,7 +4,7 @@ import CardList from '../components/CardList';
 import Modal from '../components/modal/Modal';
 import { cardsList } from '../data/cards';
 import { useCards } from '../hooks/useCards';
-import '../style/App.css'
+import '../style/App.scss'
 import Button from '../UI/button/Button';
 
 function MainPage() {
@@ -15,9 +15,9 @@ function MainPage() {
 
     return (
         <div className="App">
-            
+            <Button onClick={() => { setModal(true); }}>Check Basket</Button>
             <CardFilter filter={filter} setFilter={setFilter} />
-            <CardList cards={sortedAndSearchedCards} setModal={setModal} modal={modal}/>
+            <CardList cards={sortedAndSearchedCards} setModal={setModal} modal={modal} />
 
 
         </div>

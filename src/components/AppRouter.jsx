@@ -6,7 +6,7 @@ import NotFound from '../pages/NotFound'
 import Layout from './Layout';
 import ModelPageOne from '../pages/ModelPageOne'
 import ModelPageTwo from '../pages/ModelPageTwo';
-import Paymond from '../pages/Paymond';
+import Paymend from '../pages/Paymend';
 
 const AppRouter = () => {
     return (
@@ -16,7 +16,7 @@ const AppRouter = () => {
                 <Route path="about" element={<About />} />
                 <Route path='model_1' element={<ModelPageOne />} />
                 <Route path='model_2' element={<ModelPageTwo />} />
-                <Route path='paymond' element={<Paymond />} />
+                <Route path='paymend' element={<Paymend />} />
 
             </Route>
             <Route path='*' element={<NotFound />} />

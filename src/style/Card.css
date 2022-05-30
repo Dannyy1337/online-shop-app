@@ -1,5 +1,5 @@
 .card {
-    border: 3px solid teal;
+    border: 3px solid teal !important;
     display:flex;
     flex-direction: column;
     align-items: center;

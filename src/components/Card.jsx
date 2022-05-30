@@ -14,6 +14,7 @@ const Card = (props) => {
 
     function addToBacket() {
         backetData.push(props.card)
+        alert('Item added to basket')
         console.log(backetData)
     }
 
@@ -25,7 +26,7 @@ const Card = (props) => {
             <h3 className='card__item'>{props.card.price}</h3>
 
             <Button onClick={addToBacket}> send to b</Button>
-            <Button onClick={() => props.setModal(true)}>test</Button>
+
 
             <Modal visible={props.modal} setVisible={props.setModal}>
                 <div className="basket__modal">
@@ -38,7 +39,7 @@ const Card = (props) => {
                     )}
                 </div>
                 <Button onClick={() => props.setModal(false)}>close</Button>
-                <Link to='/paymond' backetData={backetData}>pay</Link>
+                <Link to='/paymend' backetData={backetData}>pay</Link>
             </Modal>
             <Button onClick={goModelPage}>
                 model

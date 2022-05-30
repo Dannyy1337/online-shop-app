@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import CustomLink from './CustomLink';
 import Button from '../UI/button/Button';
 import Modal from './modal/Modal';
+import icon from '../assets/icon.png'
 
 
 
@@ -12,26 +13,37 @@ const Header = (props) => {
 
   return (
     <div className="header">
-      <h1 style={{ marginRight: '40px' }}>header</h1>
-      <h1>links:</h1>
-      <CustomLink className='nav__link' to='/'>Main</CustomLink>
-      <CustomLink className='nav__link' to='/about'>About</CustomLink>
-      <Modal visible={modalAccount} setVisible={setModalAccount}>
-        <h1>23</h1>
-        <Button onClick={() => setModalAccount(false)}>close</Button>
-      </Modal>
-      <Modal visible={modal} setVisible={setModal}>
-        <h1>model</h1>
-        <div>
-          <h2>change model:</h2>
-          <Link to='/model_1' onClick={() => setModal(false)}>modal 1</Link>
-          <Link to='/model_2' onClick={() => setModal(false)}>modal 2</Link>
-        </div>
-        <Button onClick={() => setModal(false)}>close</Button>
+      <div className="link__sector link__area">
+        <CustomLink className='nav__link' to='/'>Home</CustomLink>
+        <CustomLink className='nav__link' to='/about'>About</CustomLink>
+      </div>
+      <img className='icon__header' src={icon} />
+      <div className="modal__sector link__area">
+        <Modal visible={modalAccount} setVisible={setModalAccount}>
+          <h1>Sing in</h1>
+          <form action="">
+            <h3>Email:</h3>
+            <input type="text" placeholder='Enter you email' />
+            <h3>Password:</h3>
+            <input type="text" placeholder='Enter you password' />
+          </form>
+          <Button onClick={() => setModalAccount(false)}>Enter</Button>
+        </Modal>
+        <Modal visible={modal} setVisible={setModal}>
+          <h1>model</h1>
+          <div>
+            <h2>change model:</h2>
+            <Link to='/model_1' onClick={() => setModal(false)}>modal 1</Link>
+            <Link to='/model_2' onClick={() => setModal(false)}>modal 2</Link>
+          </div>
+          <Button onClick={() => setModal(false)}>close</Button>
 
-      </Modal>
-      <button className='nav__link' onClick={() => setModalAccount(true)}>account</button>
-      <button className='nav__link' onClick={() => setModal(true)}>model</button>
+        </Modal>
+        <button className='nav__link' onClick={() => setModal(true)}>Models</button>
+        <button className='nav__link' onClick={() => setModalAccount(true)}>Account</button>
+      </div>
+
+
     </div>
   );
 };

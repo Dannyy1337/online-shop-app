@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../style/CardList.css'
 import Card from './Card';
 import Modal from './modal/Modal';
+import Button from '../UI/button/Button';
 
 const CardList = ({ cards, setModal, modal, ...props }) => {
 
@@ -16,6 +17,7 @@ const CardList = ({ cards, setModal, modal, ...props }) => {
 
             <div className="main">
                 <Modal />
+                
                 {cards.map(card => <Card card={card} key={card.id} setModal={setModal} modal={modal} />)}
             </div>
 
