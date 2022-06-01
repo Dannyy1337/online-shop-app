@@ -1,7 +1,22 @@
 .btn {
-    padding:0 20px;
-    color: teal;
-    border: 1px solid teal;
-    background: transparent;
+    border: 2px solid #54b3d6;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    font-size: 20px;
     cursor: pointer;
+    padding: 2px 7px;
+    font-weight: bold;
+    color: #54b3d6;
+    transition: all 0.2s ease;
+    background: transparent;
+}
+
+.btn:hover {
+    color: white;
+    border: 2px solid #00bbff;
+    background: #54b3d6;
+    transition: all 0.2s ease;
 }

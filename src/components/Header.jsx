@@ -25,14 +25,14 @@ const Header = (props) => {
             <h3>Email:</h3>
             <input type="text" placeholder='Enter you email' />
             <h3>Password:</h3>
-            <input type="text" placeholder='Enter you password' />
+            <input type="password" placeholder='Enter you password' />
           </form>
           <Button onClick={() => setModalAccount(false)}>Enter</Button>
         </Modal>
         <Modal visible={modal} setVisible={setModal}>
-          <h1>model</h1>
+          <h1>All models:</h1>
           <div>
-            <h2>change model:</h2>
+            <h2>View more:</h2>
             <Link to='/model_1' onClick={() => setModal(false)}>modal 1</Link>
             <Link to='/model_2' onClick={() => setModal(false)}>modal 2</Link>
           </div>
