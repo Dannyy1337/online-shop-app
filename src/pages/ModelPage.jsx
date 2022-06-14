@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ModelPage = () => {
+const ModelPage = ({ title }) => {
     return (
         <div>
-            <h1>One</h1>
+            <h1>{title}</h1>
         </div>
     );
 };

@@ -1,0 +1,89 @@
+.card {
+    border: 1px solid grey !important;
+    // border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    width: 200px;
+    height: 330px;
+    box-shadow: 3px 3px 4px grey;
+    background-color: rgb(138, 138, 138, 0.15);
+
+    & .sector {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__img {
+        width: 200px;
+        border: 1px solid grey;
+        // border-radius: 20px 20px 0px 0px;
+        margin-top: -3px;
+        // -webkit-border-radius: 20px 20px 0px 0px;
+        // -moz-border-radius: 20px 20px 0px 0px;
+        // -ms-border-radius: 20px 20px 0px 0px;
+        // -o-border-radius: 20px 20px 0px 0px;
+    }
+
+    & h2 {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    &__btn-model {
+        border: none;
+        background: none;
+        font-size: 16px;
+        font-family: 'Courier New', Courier, monospace;
+        cursor: pointer;
+        font-weight: bold;
+        color: grey;
+        transition: all 0.25s ease;
+
+        &:hover {
+            color: #54b3d6;
+        }
+    }
+
+    &__item {
+        text-align: center;
+    }
+
+    &__sec {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    & p {
+        font-style: italic;
+        margin-top: 10px;
+    }
+
+    &__btn-buy {
+        background: none;
+        border: 2px solid #54b3d6;
+        border-radius: 10px;
+        padding: 5px 7px;
+        font-weight: bold;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        margin: 10px 0;
+        cursor: pointer;
+        color: #54b3d6;
+        transition: all 0.25s ease;
+
+        &:hover {
+            color: white;
+            border: 2px solid #00bbff;
+            background: #54b3d6;
+        }
+    }
+}

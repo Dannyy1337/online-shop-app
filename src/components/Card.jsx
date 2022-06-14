@@ -1,9 +1,10 @@
 import React from 'react';
-import '../style/Card.css'
+import '../style/Card.scss'
 import Button from '../UI/button/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import { backetData } from '../data/backet';
 import Modal from './modal/Modal';
+import { models } from '../data/models';
 
 const Card = (props) => {
     let navigate = useNavigate()
@@ -14,19 +15,27 @@ const Card = (props) => {
 
     function addToBacket() {
         backetData.push(props.card)
-        alert('Item added to basket')
+        alert(`Canvas "${props.card.title}" add to your order.`)
         console.log(backetData)
+
     }
 
 
     return (
         <div className='card'>
-            <h1 className='card__item'>img</h1>
-            <h2 className='card__item'>{props.card.title}</h2>
-            <h3 className='card__item'>{props.card.price}</h3>
+            <img className='card__img' src={require(`../assets/card_img/${props.card.img}.png`)} alt="" />
+            <div className="sector">
+                <h2 className='card__item'>Canvas <br /> <span className='card__item-title'>"{props.card.title}"</span></h2>
+                <div className='card__sec'>
+                    <button className='card__btn-model' onClick={goModelPage}>
+                        {props.card.model}
+                    </button>
+                    <h3 className='card__item'>{props.card.price}</h3>
+                </div>
 
-            <Button onClick={addToBacket}> send to b</Button>
-
+                <p className='card__item'>{props.card.desc}</p>
+                <button className='card__btn-buy' onClick={addToBacket}>BUY</button>
+            </div>
 
             <Modal visible={props.modal} setVisible={props.setModal}>
                 <div className="basket__modal">
@@ -39,13 +48,9 @@ const Card = (props) => {
                     )}
                 </div>
                 <Button onClick={() => props.setModal(false)}>close</Button>
-                <Link to='/paymend' backetData={backetData}>pay</Link>
+                <Link to='/main/paymend' backetData={backetData}>pay</Link>
             </Modal>
-            <Button onClick={goModelPage}>
-                model
-            </Button>
-            <h4 className='card__item'>{props.card.desc}</h4>
-            <p>{props.card.id}</p>
+
         </div>
     );
 };

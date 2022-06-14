@@ -13,10 +13,24 @@ function MainPage() {
     const [modal, setModal] = useState(false)
     const sortedAndSearchedCards = useCards(cards, filter.sort, filter.query)
 
+    const topDescription = `"ART DISTRIBUTOR" - a unique online store with high-quality Canvas Prints,
+     several varieties of styles and types.
+      Artists from all over the world create the best works just for you.
+       "YOUR ART ZONE & STORE"®.`
+
     return (
         <div className="App">
-            <Button onClick={() => { setModal(true); }}>Check Basket</Button>
-            <CardFilter filter={filter} setFilter={setFilter} />
+            <div className="clean__sector">
+                <span>{topDescription}</span>
+            </div>
+            <div className="top__sector">
+                <h1>Canvas Prints</h1>
+            </div>
+            <div className="middle__sector">
+                <Button onClick={() => { setModal(true); }}>Check Basket</Button>
+                <CardFilter filter={filter} setFilter={setFilter} />
+
+            </div>
             <CardList cards={sortedAndSearchedCards} setModal={setModal} modal={modal} />
 
 

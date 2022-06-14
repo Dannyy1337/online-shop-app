@@ -1,0 +1,127 @@
+.home__page {
+    min-height: 100vh;
+    min-width: 100%;
+    background: url('../assets/backgrounds/home_background.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+
+    &-icon {
+        width: 150px;
+    }
+
+    &-img__group {
+        width: 500px;
+    }
+
+    &-header {
+        border: 1px dashed red;
+        min-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: -15px;
+    }
+
+    &-container {
+        border: 1px dashed green;
+        min-width: 100%;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    & h1 {
+        font-size: 80px;
+
+        color: white;
+        text-shadow: 2px 1px 3px black;
+    }
+
+    &-btn {
+        border: 2px solid #00aeff;
+        font-size: 40px;
+        padding: 10px 30px;
+        margin-top: -70px;
+        color: white;
+        text-decoration: none;
+        display: block;
+        position: relative;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: #00aeff;
+        // overflow: hidden;
+
+        & span {
+            position: relative;
+            z-index: 1;
+            transition: 1s;
+            -webkit-transition: 1s;
+            -moz-transition: 1s;
+            -ms-transition: 1s;
+            -o-transition: 1s;
+        }
+
+        & .wave {
+            position: absolute;
+            top: calc(100% + 22px) ;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #00aeff;
+            transition: 1s;
+            -webkit-transition: 1s;
+            -moz-transition: 1s;
+            -ms-transition: 1s;
+            -o-transition: 1s;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -22px;
+                left: 0;
+                width: 100%;
+                height: 22px;
+                background: url('../assets/wave.png');
+                animation: animate 0.5s linear infinite;
+                -webkit-animation: animate 0.5s linear infinite;
+
+            }
+        }
+
+        &:hover {
+            & .wave{
+                top: 0;
+            }
+            & span{
+                color: white;
+            }
+        }
+    }
+
+    & .left__sector {
+        border: 1px dashed white;
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height: 500px;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+}
+
+@keyframes animate {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 118px;
+    }
+}

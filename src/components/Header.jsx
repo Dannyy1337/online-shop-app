@@ -4,6 +4,7 @@ import CustomLink from './CustomLink';
 import Button from '../UI/button/Button';
 import Modal from './modal/Modal';
 import icon from '../assets/icon.png'
+import { models } from '../data/models'
 
 
 
@@ -14,8 +15,8 @@ const Header = (props) => {
   return (
     <div className="header">
       <div className="link__sector link__area">
-        <CustomLink className='nav__link' to='/'>Home</CustomLink>
-        <CustomLink className='nav__link' to='/about'>About</CustomLink>
+        <CustomLink className='nav__link' to='/main'>Home</CustomLink>
+        <CustomLink className='nav__link' to='/main/about'>About</CustomLink>
       </div>
       <img className='icon__header' src={icon} />
       <div className="modal__sector link__area">
@@ -33,8 +34,10 @@ const Header = (props) => {
           <h1>All models:</h1>
           <div>
             <h2>View more:</h2>
-            <Link to='/model_1' onClick={() => setModal(false)}>modal 1</Link>
-            <Link to='/model_2' onClick={() => setModal(false)}>modal 2</Link>
+            {models.map(model_item =>
+              <Link to={model_item.title} onClick={() => setModal(false)}>{model_item.title}</Link>
+            )}
+
           </div>
           <Button onClick={() => setModal(false)}>close</Button>
 
